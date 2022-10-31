@@ -1,0 +1,34 @@
+body{
+  background-color: black;
+
+}
+#carouselExampleSlidesOnly{
+  padding-left: 5%;
+  padding-right: 20%;
+  padding-left: 20%;
+
+}
+
+#log{
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+h1{
+  font-family:fantasy;
+  color: white;
+}
+h2{
+  font-family: inherit;
+  color: white;
+}
+
+p{
+  font-family: inherit;
+  font-size: 20px;
+  font-weight:bolder;
+  color: white;
+}
