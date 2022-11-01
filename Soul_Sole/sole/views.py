@@ -12,3 +12,6 @@ def signup(request):
 
 def products(request):
     return render (request, 'products.html')
+
+def thankyou(request):
+    return render (request, 'thank_you.html')

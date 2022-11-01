@@ -32,3 +32,9 @@ p{
   font-weight:bolder;
   color: white;
 }
+
+.casjor{
+  border-style: solid;
+  border-width: thick;
+  border-color: orange;
+}
