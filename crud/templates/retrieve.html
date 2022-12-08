@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Retrieve</title>
+  </head>
+  <body>
+    <h1>List:</h1>
+    <div>
+      <div>
+          {% if crudlist %}
+        <table style="margin:10px">
+          <thead>
+            <th style="padding:4px">Name</th>
+            <th style="padding-left:10px;padding:4px">Age</th>
+            <th style="padding-left:10px;padding:4px">Company</th>
+            <th style="padding-left:10px;padding:4px">Location</th>
+          </thead>
+              {%for dat in crudlist %}
+              <tr>
+              <td style="padding:4px;">{{dat.name}}</td>
+              <td style="padding-left:10px;padding:4px">{{dat.age}}</td>
+              <td style="padding-left:10px;padding:4px">{{dat.company}}</td>
+              <td style="padding-left:10px;padding:4px">{{dat.location}}</td>
+              <td style="padding-left:20px;"> <button type="button" name="button"> <a href="{%url 'delete' dat.id %}">Delete</a> </button> </td>
+              <td style="padding-left:20px;"> <button type="button" name="button"> <a href="{%url 'update' dat.id %}">Update</a> </button> </td>
+              </tr>
+              {% endfor %}
+          </table>
+          {% else %}
+            <h2>No Records Found!!</h2>
+          {% endif %}
+
+
+      </div>
+<a href="{%url 'create' %}">Home</a>
+    </div>
+
+  </body>
+</html>

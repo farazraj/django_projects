@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Location</title>
+  </head>
+  <body>
+    <h1>Locations:</h1>
+    <div >
+
+      <div >
+
+        <form  action="{%url 'location' %}" method="post">
+          {% csrf_token %}
+
+
+        <label for="loc_id">Location Id</label><br>
+        <input type="text" name="loc_id" placeholder="Enter Location ID" required><br><br>
+
+        <label for="loc_name">Location Name</label><br>
+        <input type="text" name="loc_name" placeholder="Enter Location Name" required><br><br>
+
+        <button type="submit" name="location">Create</button>
+        </form>
+      </div>
+<br><br><br>
+      <div>
+
+
+
+{% if loclist %}
+      <table>
+        <thead>
+          <th>Location ID</th>
+          <th>Location Name</th>
+        </thead>
+
+          {% for loc in loclist %}
+            <tr>
+              <td>{{loc.loc_id}}</td>
+              <td>{{loc.loc_name}}</td>
+              <td style="padding-left:20px;"> <button type="button" name="button"> <a href="{%url 'deleteloc' loc.loc_id %}">Delete</a> </button> </td>
+            </tr>
+            {% endfor %}
+      </table>
+      {% else %}
+        <h1>No Locations Found!!</h1>
+      {% endif %}
+          </div>
+    </div>
+    <br><br>
+<a href="{%url 'retrieve' %}">List</a>&nbsp;&nbsp;&nbsp;<a href="{%url 'create' %}">Home</a>
+  </body>
+</html>

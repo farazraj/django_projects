@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>create</title>
+  </head>
+  <body>
+    <h1>Create:</h1>
+    <div >
+      <div>
+        <form  action="{%url 'create'%}"  method="post">
+          {% csrf_token %}
+
+          <label for="name">Name:</label><br>
+          <input type="text" name="name" placeholder="Enter Name"><br><br>
+
+          <label for="age">Age:</label><br>
+          <input type="text" name="age" placeholder="Enter Age"><br><br>
+
+          <label for="company">Company:</label><br>
+          <input type="text" name="company" placeholder="Enter Company"><br><br>
+
+          <label for="locations">Locations:</label><br>
+          {% if loclist %}
+          <select  name="locations">
+            {% for op in loclist %}
+            <option value="{{op.loc_name}}">{{op.loc_name}}</option>
+            {%endfor%}
+          </select>
+          {%else%}
+            <select name="locations">
+              <option value="No Values">No Values</option>
+          {% endif %}
+
+        </select><br><br>
+
+          <button type="submit" name="create">Create</button><br><br>
+
+        </form>
+
+        <a href="{%url 'retrieve' %}">List</a> &nbsp;&nbsp;&nbsp; <a href="{%url 'location' %}">Locations</a>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

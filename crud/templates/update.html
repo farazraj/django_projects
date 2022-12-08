@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update</title>
+  </head>
+  <body>
+    <h1>Update:</h1>
+    <div>
+      <div>
+        <form action="{%url 'updaterecord' crud.id %}" method="post">
+          {%csrf_token%}
+          <label for="name">Name:</label><br>
+          <input type="text" name="name" value="{{crud.name}}"><br><br>
+
+          <label for="age">Age:</label><br>
+          <input type="text" name="age" value="{{crud.age}}"><br><br>
+
+          <label for="company">Company:</label><br>
+          <input type="text" name="company" value="{{crud.company}}"><br><br>
+
+          <label for="location">Location:</label><br>
+          <input type="text" name="location" value="{{crud.location}}"><br><br>
+
+          <button type="submit" name="update">Update</button>&nbsp;&nbsp;&nbsp;
+          <a href="{%url 'retrieve' %}">Cancel</a>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
